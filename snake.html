@@ -12,10 +12,10 @@
     <canvas id="gameCanvas" width "300" height="300"></canvas>
     <script>
         /** CONSTANTS **/
-        const CANVAS_BORDER_COLOUR = 'black';
-        const CANVAS_BACKGROUND_COLOUR = 'white';
-        const SNAKE_COLOUR = 'lightgreen';
-        const SNAKE_BORDER_COLOUR = 'darkgreen';
+        const CANVAS_BORDER_COLOR = 'black';
+        const CANVAS_BACKGROUND_COLOR = 'white';
+        const SNAKE_COLOR = 'lightgreen';
+        const SNAKE_BORDER_COLOR = 'darkgreen';
 
 
         let Snake = [{
@@ -41,10 +41,10 @@
         // Return a two dimensional drawing context
         var ctx = gameCanvas.getContext("2d");
 
-        // Select the COLOUR to fill in the canvas
-        ctx.fillStyle = CANVAS_BACKGROUND_COLOUR;
-        //Select the COLOUR for the border of the canvas
-        ctx.strokestyle = CANVAS_BORDER_COLOUR;
+        // Select the COLOR to fill in the canvas
+        ctx.fillStyle = CANVAS_BACKGROUND_COLOR;
+        //Select the COLOR for the border of the canvas
+        ctx.strokestyle = CANVAS_BORDER_COLOR;
 
         // Draw a "filled" rectangle to covor the entire canvas
         ctx.fillRect(0, 0, gameCanvas.width, gameCanvas.height);
@@ -67,10 +67,10 @@
          */
 
         function drawSnakePart(snakePart) {
-            // Set the colour of the snake part
-            ctx.fillStyle = SNAKE_COLOUR;
-            // Set the border colour of the snake part
-            cxt.strokestyle = SNAKE_BORDER_COLOUR;
+            // Set the color of the snake part
+            ctx.fillStyle = SNAKE_COLOR;
+            // Set the border color of the snake part
+            cxt.strokestyle = SNAKE_BORDER_COLOR;
 
             // Draw a "Filled" rectangle to represent the snake part at the coordinates
             //the part is located

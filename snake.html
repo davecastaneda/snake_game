@@ -12,24 +12,24 @@
     <canvas id="gameCanvas" width "300" height="300"></canvas>
     <script>
         /** CONSTANTS **/
-        const CANVAS_BORDER_COLOR = 'black';
-        const CANVAS_BACKGROUND_COLOR = 'white';
+        const CANVAS_BORDER_COLOUR = 'black';
+        const CANVAS_BACKGROUND_COLOUR = 'white';
 
         // Get the canvas element
         var gameCanvas = document.getElementById("gameCanvas");
 
         // Return a two dimensional drawing context
-        var cxt = gameCanvas.getContext("2d");
+        var ctx = gameCanvas.getContext("2d");
 
-        // Select the color to fill in the canvas
+        // Select the COLOUR to fill in the canvas
         ctx.fillStyle = CANVAS_BACKGROUND_COLOUR;
-        //Select the color for the border of the canvas
-        ctx.strokestyle = CANVAS_BORDER_COLOR;
+        //Select the COLOUR for the border of the canvas
+        ctx.strokestyle = CANVAS_BORDER_COLOUR;
 
         // Draw a "filled" rectangle to covor the entire canvas
         ctx.fillRect(0, 0, gameCanvas.width, gameCanvas.height);
         // Draw a "border" around the entire canvas
-        cxt.strokeRect(0, 0, gameCanvas.width, gameCanvas.height);
+        ctx.strokeRect(0, 0, gameCanvas.width, gameCanvas.height);
     </script>
 </body>
 

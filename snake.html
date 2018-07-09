@@ -153,6 +153,7 @@
         }
 
         function main() {
+            if (didGameEnd()) return;
             setTimeout(function onTick() {
                 clearCanvas();
                 drawFood();

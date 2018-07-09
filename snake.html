@@ -200,6 +200,13 @@
                     createFood();
             });
         }
+
+        function drawFood() {
+            ctx.fillStyle = 'red';
+            ctx.strokestyle = 'darkred';
+            ctx.fillRect(foodX, foodY, 10, 10);
+            ctx.strokeRect(foodX, foodY, 10, 10);
+        }
     </script>
 </body>
 

@@ -202,13 +202,28 @@
             return Math.round((Math.random() * (max - min) + min) / 10) * 10;
         }
 
-
-
         function drawFood() {
             ctx.fillStyle = 'red';
             ctx.strokestyle = 'darkred';
             ctx.fillRect(foodX, foodY, 10, 10);
             ctx.strokeRect(foodX, foodY, 10, 10);
+        }
+
+
+
+        function advanceSnake() {
+            const head {
+                x: snake[0].x + dx,
+                y: snake[0].y
+            };
+            snake.unshift(head);
+
+            const didEatFood = snake[0].x === foodX && snake[0].y === foodY;
+            if (didEatFood) {
+                createFood();
+            } else {
+                snake.pop();
+            }
         }
     </script>
 </body>

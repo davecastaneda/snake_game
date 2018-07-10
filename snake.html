@@ -165,13 +165,14 @@
          * Creates random set of coordinates for the snake food.
          */
         function createFood() {
+            // Generates a random number for the food's x-coordinate
             foodX = randomTen(0, gameCanvas.width - 10);
+            // Generates a random number for the food's y-coordinate
             foodY = randomTen(0, gameCanvas.height - 10);
 
-            snake.forEach(function isFoodOnSnake(part) {
-                const foooIsOnSnake = part.x == foodX && part.y == foodY
-                if (foodIsOnSnake)
-                    createFood();
+            // If the new food location is where the snake currently is, generate a new instance of "food"
+            snake.forEach(function isOnSnake(part) {
+                if (part.x == foodX && part.y == foodY) createFood();
             });
         }
 

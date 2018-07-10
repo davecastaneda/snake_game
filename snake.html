@@ -63,7 +63,17 @@
         // Call changeDirection whenever a key is pressed
         document.addEventListener("keydown", changeDirection);
 
-
+        function main() {
+            if (didGameEnd()) return;
+            setTimeout(function onTick() {
+                clearCanvas();
+                drawFood();
+                advanceSnake();
+                drawSnake();
+                // Call main again
+                main();
+            }, 100)
+        }
 
 
 
@@ -167,17 +177,7 @@
             });
         }
 
-        function main() {
-            if (didGameEnd()) return;
-            setTimeout(function onTick() {
-                clearCanvas();
-                drawFood();
-                advanceSnake();
-                drawSnake();
-                // Call main again
-                main();
-            }, 100)
-        }
+
 
 
         function changeDirection(event) {

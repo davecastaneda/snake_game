@@ -136,24 +136,47 @@
             // Adds the new head to the beginning of the snake body
             snake.unshift(head);
 
-
-
-
-
-
-
-
-
             const didEatFood = snake[0].x === foodX && snake[0].y === foodY;
             if (didEatFood) {
+                // Increases the score by 10
                 score += 10;
+                // Displays the score on the screen
                 document.getElementById('score').innerHTML = score;
 
+                // Generates a new food location
                 createFood();
             } else {
+                // Removes part of the snake's body
                 snake.pop();
             }
         }
+
+        /**
+         * Generates a random number that is a multiple of 10 - given a minimum
+         * and a maximum number
+         * @param { number } min - The minimum number the random number can be
+         * @param { number } max - The maximum number the random number can be
+         */
+        function randomTen(min, max) {
+            return Math.round((Math.random() * (max - min) + min) / 10) * 10;
+        }
+
+        /**
+         * Creates random set of coordinates for the snake food.
+         */
+        function createFood() {
+            foodX = randomTen(0, gameCanvas.width - 10);
+            foodY = randomTen(0, gameCanvas.height - 10);
+
+            snake.forEach(function isFoodOnSnake(part) {
+                const foooIsOnSnake = part.x == foodX && part.y == foodY
+                if (foodIsOnSnake)
+                    createFood();
+            });
+        }
+
+
+
 
 
 
@@ -231,21 +254,6 @@
         }
         drawSnake();
 
-
-        function createFood() {
-            foodX = randomTen(0, gameCanvas.width - 10);
-            foodY = randomTen(0, gameCanvas.height - 10);
-
-            snake.forEach(function isFoodOnSnake(part) {
-                const foooIsOnSnake = part.x == foodX && part.y == foodY
-                if (foodIsOnSnake)
-                    createFood();
-            });
-        }
-
-
-
-
         function changeDirection(event) {
             const LEFT_KEY = 37;
             const RIGHT_KEY = 39;
@@ -280,10 +288,6 @@
         }
 
         document.addEventListener("keydown", changeDirection)
-
-        function randomTen(min, max) {
-            return Math.round((Math.random() * (max - min) + min) / 10) * 10;
-        }
 
         let score = 0;
     </script>

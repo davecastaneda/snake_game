@@ -15,6 +15,8 @@
         const CANVAS_BACKGROUND_COLOR = 'white';
         const SNAKE_COLOR = 'lightgreen';
         const SNAKE_BORDER_COLOR = 'darkgreen';
+        const FOOD_COLOR = 'red';
+        const FOOD_BORDER_COLOR = 'darkred';
 
         let snake = [{
             x: 150,
@@ -33,27 +35,50 @@
             y: 150
         }]
 
+        // The user's score
+        let score = 0;
+
         // Horizontal velocity
         let dx = 10;
         // Vertical velocity
         let dy = 0;
 
-
         // Gets the canvas element
         var gameCanvas = document.getElementById("gameCanvas");
-
         // Returns a two-dimensional drawing context
         var ctx = gameCanvas.getContext("2d");
-
         // Selects the color to fill the canvas
         ctx.fillStyle = CANVAS_BACKGROUND_COLOR;
         // Selects the color for the border of the canvas
         ctx.strokestyle = CANVAS_BORDER_COLOR;
-
         // Draws a "filled" rectangle to cover the entire canvas
         ctx.fillRect(0, 0, gameCanvas.width, gameCanvas.height);
         // Draws a "border" around the entire canvas
         ctx.strokeRect(0, 0, gameCanvas.width, gameCanvas.height);
+
+        // Start game
+        main();
+        // Creates the first food location
+        createFood();
+        // Call changeDirection whenever a key is pressed
+        document.addEventListener("keydown", changeDirection);
+
+        function main() {
+            if (didGameEnd()) return;
+            setTimeout(function onTick() {
+                clearCanvas();
+                drawFood();
+                advanceSnake();
+                drawSnake();
+                // Call main again
+                main();
+            }, 100)
+        }
+
+
+
+
+
 
 
         // Moves one step to the right
@@ -80,14 +105,6 @@
             snake.unshift(head);
             snake.pop();
         }
-
-
-
-
-        function blank(params) {
-
-        }
-
 
         /**
          * Draws the snake on the canvas
@@ -160,17 +177,7 @@
             });
         }
 
-        function main() {
-            if (didGameEnd()) return;
-            setTimeout(function onTick() {
-                clearCanvas();
-                drawFood();
-                advanceSnake();
-                drawSnake();
-                // Call main again
-                main();
-            }, 100)
-        }
+
 
 
         function changeDirection(event) {

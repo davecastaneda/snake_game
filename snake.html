@@ -127,14 +127,22 @@
          * according to the horizontal velocity and the y-coordinates of its parts
          * according to the vertical velocity
          */
-
         function advanceSnake() {
-            const head {
+            // Creates the new snake's head
+            const head = {
                 x: snake[0].x + dx,
-                y: snake[0].y
+                y: snake[0].y + dy
             };
-
+            // Adds the new head to the beginning of the snake body
             snake.unshift(head);
+
+
+
+
+
+
+
+
 
             const didEatFood = snake[0].x === foodX && snake[0].y === foodY;
             if (didEatFood) {

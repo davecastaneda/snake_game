@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Snake Game</title>
+    <title>Ride the Snake (AKA: The West is the Best)</title>
 </head>
 
 <body>
@@ -68,6 +68,7 @@
             if (didGameEnd()) return;
 
             setTimeout(function onTick() {
+                changeDirection = false;
                 clearCanvas();
                 drawFood();
                 advanceSnake();
@@ -213,6 +214,10 @@
             const RIGHT_KEY = 39;
             const UP_KEY = 38;
             const DOWN_KEY = 40;
+
+            if (changeDirection) return;
+
+            changeDirection = true;
 
             const keyPressed = event.keyCode;
 

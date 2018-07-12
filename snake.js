@@ -1,4 +1,5 @@
 /** CONSTANTS **/
+const GAME_SPEED = 100;
 const CANVAS_BORDER_COLOR = 'black';
 const CANVAS_BACKGROUND_COLOR = 'white';
 const SNAKE_COLOR = 'lightgreen';
@@ -23,9 +24,17 @@ let snake = [{
     y: 150
 }]
 
+
+
+
 // The user's score
 let score = 0;
-
+// When set to "true," the snake is changing direction 
+let changeDirection = false;
+// The food's x-coordinate
+let foodX;
+// The food's y-coordinate
+let foodY;
 // Horizontal velocity
 let dx = 10;
 // Vertical velocity

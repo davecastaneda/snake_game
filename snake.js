@@ -119,23 +119,18 @@ function advanceSnake() {
         // Generates a new food location
         createFood();
     } else {
-        // Removes part of the snake's body
+        // Removes the last part of the snake's body
         snake.pop();
     }
 }
 
-
-
-
-
 /**
- * Returns 'true' if the head of the snake touched another part of the game
+ * Returns 'true' if the head of the snake touched another part of itself,
  * or any of the walls
  */
 function didGameEnd() {
     for (let i = 4; i < snake.length; i++) {
-        const didCollide = snake[i].x === snake[0].x && snake[i].y === snake[0].y
-        if (didCollide) return true
+        if (snake[i].x === snake[0].x && snake[i].y === snake[0].y) return true
     }
 
     const hitLeftWall = snake[0].x < 0;
@@ -146,10 +141,6 @@ function didGameEnd() {
     return hitLeftWall || hitRightWall || hitTopWall || hitBottomWall
 }
 
-
-
-
-
 /**
  * Generates a random number that is a multiple of 10 - given a minimum
  * and a maximum number
@@ -159,6 +150,11 @@ function didGameEnd() {
 function randomTen(min, max) {
     return Math.round((Math.random() * (max - min) + min) / 10) * 10;
 }
+
+
+
+
+
 
 /**
  * Creates random set of coordinates for the snake food.

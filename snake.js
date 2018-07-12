@@ -182,11 +182,14 @@ function drawSnake() {
 function drawSnakePart(snakePart) {
     // Sets the color of the snake part
     ctx.fillStyle = SNAKE_COLOR;
+
     // Sets the border color of the snake part
     ctx.strokestyle = SNAKE_BORDER_COLOR;
+
     // Draws a "filled" rectangle to represent the snake part at the coordinates
     // where the part is located
     ctx.fillRect(snakePart.x, snakePart.y, 10, 10);
+
     // Draws a border around the snake part
     ctx.strokeRect(snakePart.x, snakePart.y, 10, 10);
 }
@@ -195,19 +198,25 @@ function drawSnakePart(snakePart) {
  * Changes the vertical and horizontal velocity of the snake according to the
  * key that was pressed
  * The direction cannot be switched to the opposite direction, to prevent the snake from reversing
- * for example, if the direction is 'right', it cannot become 'left'
+ * For example, if the direction is 'right', it cannot become 'left'
  * @param { object } event - the keydown event
  */
-
 function changeDirection(event) {
     const LEFT_KEY = 37;
     const RIGHT_KEY = 39;
     const UP_KEY = 38;
     const DOWN_KEY = 40;
 
-    if (changeDirection) return;
+    /**
+     * Prevent the snake from reversing
+     * Example scenario:
+     * The snake is moving to the right. The user presses down, and then left immediately
+     * and then the snake immediately changes direction without taking a step down first
+     */
 
-    changeDirection = true;
+    if (changingDirection) return;
+
+    changingDirection = true;
 
     const keyPressed = event.keyCode;
 

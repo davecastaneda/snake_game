@@ -142,7 +142,7 @@ function didGameEnd() {
 }
 
 /**
- * Generates a random number that is a multiple of 10 - given a minimum
+ * Generates a random number that is a multiple of 10, given a minimum
  * and a maximum number
  * @param { number } min - The minimum number the random number can be
  * @param { number } max - The maximum number the random number can be
@@ -150,11 +150,6 @@ function didGameEnd() {
 function randomTen(min, max) {
     return Math.round((Math.random() * (max - min) + min) / 10) * 10;
 }
-
-
-
-
-
 
 /**
  * Creates random set of coordinates for the snake food.
@@ -166,10 +161,16 @@ function createFood() {
     foodY = randomTen(0, gameCanvas.height - 10);
 
     // If the new food location is where the snake currently is, generate a new instance of "food"
-    snake.forEach(function isOnSnake(part) {
-        if (part.x == foodX && part.y == foodY) createFood();
+    snake.forEach(function isFoodOnSnake(part) {
+        const foodIsOnSnake = part.x == foodX && part.y == foodY;
+        if (foodIsOnSnake) createFood();
     });
 }
+
+
+
+
+
 
 /**
  * Draws the snake on the canvas

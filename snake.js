@@ -167,11 +167,6 @@ function createFood() {
     });
 }
 
-
-
-
-
-
 /**
  * Draws the snake on the canvas
  */
@@ -241,12 +236,3 @@ function changeDirection(event) {
         dy = 10;
     }
 }
-
-// Selects the color to fill the canvas
-ctx.fillStyle = CANVAS_BACKGROUND_COLOR;
-// Selects the color for the border of the canvas
-ctx.strokestyle = CANVAS_BORDER_COLOR;
-// Draws a "filled" rectangle to cover the entire canvas
-ctx.fillRect(0, 0, gameCanvas.width, gameCanvas.height);
-// Draws a "border" around the entire canvas
-ctx.strokeRect(0, 0, gameCanvas.width, gameCanvas.height);

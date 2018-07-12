@@ -53,18 +53,8 @@ document.addEventListener("keydown", changeDirection);
  * Main function of the game
  * called repeatedly to advance the game
  */
-
-
-
-
-
-
-
-
-
-
 function main() {
-
+    // If the game ended, return early to stop the game
     if (didGameEnd()) return;
 
     setTimeout(function onTick() {
@@ -76,7 +66,7 @@ function main() {
 
         // Call main again
         main();
-    }, 100)
+    }, GAME_SPEED)
 }
 
 /**
@@ -93,24 +83,6 @@ function clearCanvas() {
     ctx.fillRect(0, 0, gameCanvas.width, gameCanvas.height);
     // Draws a "border" around the entire canvas
     ctx.strokeRect(0, 0, gameCanvas.width, gameCanvas.height);
-}
-
-/**
- * Returns 'true' if the head of the snake touched another part of the game
- * or any of the walls
- */
-function didGameEnd() {
-    for (let i = 4; i < snake.length; i++) {
-        const didCollide = snake[i].x === snake[0].x && snake[i].y === snake[0].y
-        if (didCollide) return true
-    }
-
-    const hitLeftWall = snake[0].x < 0;
-    const hitRightWall = snake[0].x > gameCanvas.width - 10;
-    const hitTopWall = snake[0].y < 0;
-    const hitBottomWall = snake[0].y > gameCanvas.height - 10;
-
-    return hitLeftWall || hitRightWall || hitTopWall || hitBottomWall
 }
 
 /**
@@ -151,6 +123,32 @@ function advanceSnake() {
         snake.pop();
     }
 }
+
+
+
+
+
+/**
+ * Returns 'true' if the head of the snake touched another part of the game
+ * or any of the walls
+ */
+function didGameEnd() {
+    for (let i = 4; i < snake.length; i++) {
+        const didCollide = snake[i].x === snake[0].x && snake[i].y === snake[0].y
+        if (didCollide) return true
+    }
+
+    const hitLeftWall = snake[0].x < 0;
+    const hitRightWall = snake[0].x > gameCanvas.width - 10;
+    const hitTopWall = snake[0].y < 0;
+    const hitBottomWall = snake[0].y > gameCanvas.height - 10;
+
+    return hitLeftWall || hitRightWall || hitTopWall || hitBottomWall
+}
+
+
+
+
 
 /**
  * Generates a random number that is a multiple of 10 - given a minimum

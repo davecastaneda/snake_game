@@ -24,13 +24,10 @@ let snake = [{
     y: 150
 }]
 
-
-
-
 // The user's score
 let score = 0;
 // When set to "true," the snake is changing direction 
-let changeDirection = false;
+let changingDirection = false;
 // The food's x-coordinate
 let foodX;
 // The food's y-coordinate
@@ -44,14 +41,6 @@ let dy = 0;
 var gameCanvas = document.getElementById("gameCanvas");
 // Returns a two-dimensional drawing context
 var ctx = gameCanvas.getContext("2d");
-// Selects the color to fill the canvas
-ctx.fillStyle = CANVAS_BACKGROUND_COLOR;
-// Selects the color for the border of the canvas
-ctx.strokestyle = CANVAS_BORDER_COLOR;
-// Draws a "filled" rectangle to cover the entire canvas
-ctx.fillRect(0, 0, gameCanvas.width, gameCanvas.height);
-// Draws a "border" around the entire canvas
-ctx.strokeRect(0, 0, gameCanvas.width, gameCanvas.height);
 
 // Start game
 main();
@@ -59,6 +48,20 @@ main();
 createFood();
 // Call changeDirection whenever a key is pressed
 document.addEventListener("keydown", changeDirection);
+
+/**
+ * Main function of the game
+ * called repeatedly to advance the game
+ */
+
+
+
+
+
+
+
+
+
 
 function main() {
 
@@ -243,3 +246,12 @@ function changeDirection(event) {
         dy = 10;
     }
 }
+
+// Selects the color to fill the canvas
+ctx.fillStyle = CANVAS_BACKGROUND_COLOR;
+// Selects the color for the border of the canvas
+ctx.strokestyle = CANVAS_BORDER_COLOR;
+// Draws a "filled" rectangle to cover the entire canvas
+ctx.fillRect(0, 0, gameCanvas.width, gameCanvas.height);
+// Draws a "border" around the entire canvas
+ctx.strokeRect(0, 0, gameCanvas.width, gameCanvas.height);

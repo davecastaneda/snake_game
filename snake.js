@@ -162,8 +162,8 @@ function createFood() {
 
     // If the new food location is where the snake currently is, generate a new instance of "food"
     snake.forEach(function isFoodOnSnake(part) {
-        const foodIsOnSnake = part.x == foodX && part.y == foodY;
-        if (foodIsOnSnake) createFood();
+        const foodIsoNsnake = part.x == foodX && part.y == foodY;
+        if (foodIsoNsnake) createFood();
     });
 }
 

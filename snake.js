@@ -38,7 +38,7 @@ let dx = 10;
 let dy = 0;
 
 // Gets the canvas element
-var gameCanvas = document.getElementById("gameCanvas");
+const gameCanvas = document.getElementById("gameCanvas");
 // Returns a two-dimensional drawing context
 var ctx = gameCanvas.getContext("2d");
 

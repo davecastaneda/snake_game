@@ -46,8 +46,8 @@ var ctx = gameCanvas.getContext("2d");
 main();
 // Creates the first food location
 createFood();
-// Call changeDirection whenever a key is pressed
-document.addEventListener("keydown", changeDirection);
+// Call changingDirection whenever a key is pressed
+document.addEventListener("keydown", changingDirection);
 
 /**
  * Main function of the game
@@ -58,7 +58,7 @@ function main() {
     if (didGameEnd()) return;
 
     setTimeout(function onTick() {
-        changeDirection = false;
+        changingDirection = false;
         clearCanvas();
         drawFood();
         advanceSnake();
@@ -201,7 +201,7 @@ function drawSnakePart(snakePart) {
  * For example, if the direction is 'right', it cannot become 'left'
  * @param { object } event - the keydown event
  */
-function changeDirection(event) {
+function changingDirection(event) {
     const LEFT_KEY = 37;
     const RIGHT_KEY = 39;
     const UP_KEY = 38;

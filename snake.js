@@ -201,7 +201,7 @@ function drawSnakePart(snakePart) {
  * For example, if the direction is 'right', it cannot become 'left'
  * @param { object } event - the keydown event
  */
-function changingDirection(event) {
+function changeDirection(event) {
     const LEFT_KEY = 37;
     const RIGHT_KEY = 39;
     const UP_KEY = 38;

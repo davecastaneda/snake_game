@@ -40,14 +40,14 @@ let dy = 0;
 // Gets the canvas element
 const gameCanvas = document.getElementById("gameCanvas");
 // Returns a two-dimensional drawing context
-var ctx = gameCanvas.getContext("2d");
+const ctx = gameCanvas.getContext("2d");
 
 // Start game
 main();
 // Creates the first food location
 createFood();
-// Call changingDirection whenever a key is pressed
-document.addEventListener("keydown", changingDirection);
+// Call changeDirection whenever a key is pressed
+document.addEventListener("keydown", changeDirection);
 
 /**
  * Main function of the game
@@ -64,7 +64,7 @@ function main() {
         advanceSnake();
         drawSnake();
 
-        // Call main again
+        // Call game again
         main();
     }, GAME_SPEED)
 }

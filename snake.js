@@ -194,11 +194,11 @@ function drawSnakePart(snakePart) {
     ctx.strokeRect(snakePart.x, snakePart.y, 10, 10);
 }
 
-// This is a button press test
-
+// This is a test fuction
 function myFunction() {
-    document.getElementById("up").innerHTML = "Test";
+    document.getElementById("up").innerHTML = "Up!";
 }
+
 
 /**
  * Changes the vertical and horizontal velocity of the snake according to the

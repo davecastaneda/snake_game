@@ -1,5 +1,5 @@
 /** CONSTANTS **/
-const GAME_SPEED = 100;
+const GAME_SPEED = 80;
 const CANVAS_BORDER_COLOR = 'black';
 const CANVAS_BACKGROUND_COLOR = 'white';
 const SNAKE_COLOR = 'lightgreen';
@@ -193,12 +193,6 @@ function drawSnakePart(snakePart) {
     // Draws a border around the snake part
     ctx.strokeRect(snakePart.x, snakePart.y, 10, 10);
 }
-
-// This is a test fuction
-function myFunction() {
-    document.getElementById("up").innerHTML = "Up!";
-}
-
 
 /**
  * Changes the vertical and horizontal velocity of the snake according to the

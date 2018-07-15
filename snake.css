@@ -23,27 +23,30 @@ i {
 }
 
 .right {
-    text-align: center;
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
 }
 
 .left {
-    text-align: center;
     transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
 }
 
 .up {
-    text-align: center;
     transform: rotate(-135deg);
     -webkit-transform: rotate(-135deg);
 }
 
 .down {
-    text-align: center;
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
+}
+
+.buttons {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 #gameCanvas {

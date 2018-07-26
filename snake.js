@@ -2,9 +2,9 @@
 const GAME_SPEED = 80;
 const CANVAS_BORDER_COLOR = 'black';
 const CANVAS_BACKGROUND_COLOR = 'white';
-const SNAKE_COLOR = 'lightgreen';
+const SNAKE_COLOR = '#33a933';
 const SNAKE_BORDER_COLOR = 'darkgreen';
-const FOOD_COLOR = 'red';
+const FOOD_COLOR = '#a9336e';
 const FOOD_BORDER_COLOR = 'darkred';
 
 let snake = [{

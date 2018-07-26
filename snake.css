@@ -10,6 +10,7 @@ body {
 }
 
 html {
+    color: #33a933;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -70,10 +71,10 @@ i {
 #score {
     color: #6e33a9;
     position: absolute;
-    top: 28%;
+    top: 17%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    font-size: 69px;
+    font-size: 55px;
     font-family: Arial, Helvetica, sans-serif;
 }

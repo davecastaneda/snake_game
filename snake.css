@@ -10,8 +10,18 @@ body {
 }
 
 html {
-    color: #6e33a9;
     text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 {
+    color: #6e33a9;
+    position: absolute;
+    top: 8%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 40px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -23,8 +33,9 @@ i {
 }
 
 .buttons {
+    color: #ffffff;
     position: absolute;
-    top: 60%;
+    top: 65%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -51,17 +62,18 @@ i {
 
 #gameCanvas {
     position: absolute;
-    top: 39%;
+    top: 42%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
 #score {
+    color: #6e33a9;
     position: absolute;
-    top: 14%;
+    top: 18%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    font-size: 78px;
+    font-size: 69px;
     font-family: Arial, Helvetica, sans-serif;
 }
